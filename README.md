@@ -15,9 +15,8 @@ Then download all files:
 
 1. Navigate to [order download page](https://www.ordnancesurvey.co.uk/orderdownload/orders)
 2. Click on the order and then save the page as a HTML using your browser and save it into the root folder of this directory
-3. Make a folder called `zip_download` in root folder
-4. Open a command prompt and navigate to the folder and start a `scrapy shell` ([scrapy](https://scrapy.org/) must be installed)
-5. Run the following python code (substitute the first line with the HTML file):
+3. Open a command prompt and navigate to the folder and start a `scrapy shell` ([scrapy](https://scrapy.org/) must be installed)
+4. Run the following python code (substitute the first line with the HTML file):
 
 ```python
 fetch("Ordnance Survey Download Centre.html")
@@ -41,7 +40,12 @@ There are around 10,964 files so will take a couple of hours.
 
 To extract and append files:
 
-1. Make a folder `zip_extract` in root directory
-2. Extract all zip files. In Windows PowerShell use `Get-ChildItem 'zip_download' -Filter *.zip | Expand-Archive -DestinationPath 'zip_extract' -Force`, on other platforms use (? please suggest)
-3. Run `python2 AddressBasePremium_RecordSplitter.py` (it must be Python2 otherwise you get into unicode issues)
-4. Specify the full path to the directory `zip_extract`
+1. Extract all zip files. In Windows PowerShell use `Get-ChildItem 'zip_download' -Filter *.zip | Expand-Archive -DestinationPath 'zip_extract' -Force`, on other platforms use (? please suggest)
+2. Run `python2 AddressBasePremium_RecordSplitter.py` (it must be Python2 otherwise you get into unicode issues)
+3. Specify the full path to the directory `zip_extract`
+
+## Licence
+This text, guide and tool is public domain, except:
+* Anythin that has been sourced from OS which includes:
+    * [AddressBasePremium_RecordSplitter.py](https://s3-eu-west-1.amazonaws.com/osproducts/AddressBase/AddressBase_Scripts.zip)
+    * [Header files stored in `zip_extract` directory](https://www.ordnancesurvey.co.uk/docs/product-schemas/addressbase-premium-header-files.zip)
