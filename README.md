@@ -1,5 +1,5 @@
 # addressbase_wrangle
-Wrangle AddressBase Premium into a usable format as what [OS](https://www.ordnancesurvey.co.uk/) provide is 💩
+Wrangle [AddressBase Premium](https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase-premium.html) into a usable format as what [Ordnance Survey](https://www.ordnancesurvey.co.uk/) provide is 💩
 
 ## Useful links
 * [AddressBase Support page](https://www.ordnancesurvey.co.uk/business-and-government/help-and-support/products/addressbase-premium.html)
@@ -45,7 +45,6 @@ To extract and append files:
 3. Specify the full path to the directory `zip_extract`
 
 ## Licence
-This text, guide and tool is public domain, except:
-* Anythin that has been sourced from OS which includes:
+This text, guide and tool is public domain, except anything that has been sourced from OS (and therefore under their licence) which includes:
     * [AddressBasePremium_RecordSplitter.py](https://s3-eu-west-1.amazonaws.com/osproducts/AddressBase/AddressBase_Scripts.zip)
     * [Header files stored in `zip_extract` directory](https://www.ordnancesurvey.co.uk/docs/product-schemas/addressbase-premium-header-files.zip)
