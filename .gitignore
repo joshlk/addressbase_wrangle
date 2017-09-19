@@ -1,3 +1,9 @@
+# folders
+zip_download/*.zip
+zip_extract/*.csv
+!zip_extract/Record_*.csv
+*.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
