@@ -1,15 +1,13 @@
 # addressbase_wrangle
 Wrangle [AddressBase Premium](https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase-premium.html) into a usable format as what [Ordnance Survey](https://www.ordnancesurvey.co.uk/) provide is 💩
 
-## Useful links
-* [AddressBase Support page](https://www.ordnancesurvey.co.uk/business-and-government/help-and-support/products/addressbase-premium.html)
-* [AddressBase user guide](https://www.ordnancesurvey.co.uk/docs/user-guides/addressbase-products-getting-started-guide.pdf)
-
 ## Steps
+These steps require Python and two packages, [scrapy](https://scrapy.org/) and [pandas](https://pandas.pydata.org/). Installing a Python distribution like [Python Anaconda](https://www.anaconda.com/download/) is recomended.
+
 Firstly order Address Base Premium from OS (it's free with restrictions):
 
 1. Sign up to OS's [Data Exploration Licence](https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html)
-2. Order Address Base Premium CSV version through the [portal](https://orders.ordnancesurvey.co.uk/orders/)
+2. Order Address Base Premium as a CSV through the [portal](https://orders.ordnancesurvey.co.uk/orders/)
 
 Then download all files:
 
@@ -41,11 +39,16 @@ There are around 10,964 files so will take a couple of hours.
 To extract and append files:
 
 1. Extract all zip files. In Windows PowerShell use `Get-ChildItem 'zip_download' -Filter *.zip | Expand-Archive -DestinationPath 'zip_extract' -Force`, on other platforms use (? please suggest)
-2. Run `python2 AddressBasePremium_RecordSplitter.py` (it must be Python2 otherwise you get into unicode issues)
+2. Run `python addressbase_wrangle.py` (requires [pandas](https://pandas.pydata.org/))
 3. Specify the full path to the directory `zip_extract`
 
-## Licence
-This text, guide and tool is public domain, except anything that has been sourced from OS (and therefore under their licence) which includes:
+CSV files will be in the `output` folder.
 
-* [AddressBasePremium_RecordSplitter.py](https://s3-eu-west-1.amazonaws.com/osproducts/AddressBase/AddressBase_Scripts.zip)
+## Useful links
+* [AddressBase Support page](https://www.ordnancesurvey.co.uk/business-and-government/help-and-support/products/addressbase-premium.html)
+* [AddressBase user guide](https://www.ordnancesurvey.co.uk/docs/user-guides/addressbase-products-getting-started-guide.pdf)
+
+## Licence
+This text, guide and tool is licensed under MIT (see license.txt for details), except anything that has been sourced from OS (and therefore under their own terms) which includes:
+
 * [Header files stored in `zip_extract` directory](https://www.ordnancesurvey.co.uk/docs/product-schemas/addressbase-premium-header-files.zip)
