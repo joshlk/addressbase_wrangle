@@ -1,7 +1,7 @@
 # folders
 zip_download/*.zip
 zip_extract/*.csv
-!zip_extract/Record_*.csv
+output/*.csv
 *.csv
 
 # Byte-compiled / optimized / DLL files
