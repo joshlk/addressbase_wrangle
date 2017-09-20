@@ -3,6 +3,7 @@ zip_download/*.zip
 zip_extract/*.csv
 output/*.csv
 *.csv
+*.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
