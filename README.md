@@ -21,7 +21,7 @@ fetch("Ordnance Survey Download Centre.html")
 links = response.xpath('//*[@id="orderLinks"]/li[*]/a/@href').getall()
 
 import urllib
-from urlparse import urlparse
+from urllib.parse import urlparse
 import os
 
 for i, link in enumerate(links):
