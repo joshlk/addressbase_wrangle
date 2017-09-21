@@ -1,6 +1,8 @@
 # addressbase_wrangle
 Wrangle [AddressBase Premium](https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase-premium.html) into a usable format as what [Ordnance Survey](https://www.ordnancesurvey.co.uk/) provide is 💩
 
+The process is quite I/O disk heavy so best to run it on a local SSD.
+
 ## Steps
 These steps require Python and two packages, [scrapy](https://scrapy.org/) and [pandas](https://pandas.pydata.org/). Installing a Python distribution like [Python Anaconda](https://www.anaconda.com/download/) is recomended.
 
@@ -40,7 +42,6 @@ To extract and append files:
 
 1. Extract all zip files. In Windows PowerShell use `Get-ChildItem 'zip_download' -Filter *.zip | Expand-Archive -DestinationPath 'zip_extract' -Force`, on other platforms use (? please suggest)
 2. Run `python addressbase_wrangle.py` (requires [pandas](https://pandas.pydata.org/))
-3. Specify the full path to the directory `zip_extract`
 
 CSV files will be in the `output` folder.
 
