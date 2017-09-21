@@ -65,7 +65,7 @@ try:
 
     ## Split and merge data
     input_files = glob(os.path.join(zip_extract_folder, '*.csv'))
-    #input_files = sorted(input_files)
+    input_files = sorted(input_files)
 	
     # Restart from where we left off
     if first_file is not None:
@@ -89,7 +89,7 @@ try:
                 sub_data.iloc[:,:n_cols].to_csv(open_file, header=None, index=False, mode='a', encoding='utf8')
             except UnicodeEncodeError:
                 # Some of the files are currupt and for others Pandas gets confused due to the mixed datatypes
-                clean_str_cols(sub_data.iloc[:,:n_cols], 'utf8').to_csv(open_file, header=None, index=False, mode='a', encoding='utf8')
+                clean_str_cols(sub_data.iloc[:,:n_cols]).to_csv(open_file, header=None, index=False, mode='a', encoding='utf8')
         
 finally:
     # Allways close files
